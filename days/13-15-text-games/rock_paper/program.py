@@ -1,6 +1,5 @@
 
 from player import Player
-#import roll 
 from call import Rock, Scissors, Paper
 import random
 
