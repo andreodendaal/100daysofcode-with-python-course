@@ -1,23 +1,31 @@
-class Call:
 
-    def __init__(self, type) -> type:
-        self.roll_type = type
+class Paper:
+    roll_type = 'paper'
 
     def can_defeat(self, opposition_type):
-        if self.roll_type == 'rock' and opposition_type == 'scissors':
-            return 'win'
-        elif self.roll_type == 'rock' and opposition_type == 'paper':
-            return 'lose'
-
-        elif self.roll_type == 'scissors' and opposition_type == 'paper':
-            return 'win'
-        elif self.roll_type == 'scissors' and opposition_type == 'rock':
-            return 'lose'
-
-        elif self.roll_type == 'paper' and opposition_type == 'rock':
-            return 'win'
-        elif self.roll_type == 'paper' and opposition_type == 'scissors':
-            return 'lose'
+        self.opposition_type = opposition_type
+        if self.opposition_type == 'rock':
+            return True
         else:
-            return 'draw'
+            return False
 
+class Rock:
+    roll_type = 'rock'
+
+    def can_defeat(self, opposition_type):
+        self.opposition_type = opposition_type
+        if self.opposition_type == 'scissors':
+            return True
+        else:
+            return False
+
+class Scissors:
+    roll_type = 'scissors'
+
+    def can_defeat(self, opposition_type):
+        self.opposition_type = opposition_type
+        if self.opposition_type == 'paper':
+            return True
+        else:
+            return False
+        
